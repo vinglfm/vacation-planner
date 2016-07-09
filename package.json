@@ -1,0 +1,13 @@
+{
+  "name": "vacation-planner",
+  "version": "0.0.1",
+  "description": "Applicationfor planning your next vacation!",
+  "main": "webpack.config.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
