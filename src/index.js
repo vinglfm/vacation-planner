@@ -23,7 +23,6 @@ class App extends React.Component {
 }
 function render() {
   var route = window.location.hash.substr(1);
-  console.log(route);
   ReactDOM.render(<App route={route}/>, document.getElementById('root'));
 }
 window.addEventListener('hashchange', render);
