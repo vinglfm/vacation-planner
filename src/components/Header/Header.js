@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './styles.module.css';
 
 export default class Header extends React.Component {
   render() {
@@ -7,7 +8,7 @@ export default class Header extends React.Component {
       <nav className = "navbar navbar-default">
         <div className="container-fluid">
           <a href="/" className="navbar-brand">
-            <img src={logo} width="25px" height = "25px"/>
+            <img src={logo} />
           </a>
           <ul className="nav navbar-nav">
             <li><a href="/">Home</a></li>

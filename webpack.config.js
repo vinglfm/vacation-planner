@@ -1,5 +1,14 @@
-var path = require('path');
 var webpack = require('webpack');
+var precss = require('precss');
+var autoprefixer = require('autoprefixer');
+var cssnano = require('cssnano');
+
+var path = require('path'),
+    join = path.join,
+    resolve = path.resolve;
+
+const root = resolve(__dirname);
+const src = join(root, 'src');
 
 module.exports = {
   devtool: 'eval',
@@ -34,22 +43,31 @@ module.exports = {
       test: /\.js$/,
       loaders: ['react-hot', 'babel'],
       include: path.join(__dirname, 'src')
-    },
-    {
-      test: /\.woff2?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-      loader: "url?limit=10000"
-    },
-    {
-      test: /\.(ttf|eot|svg)(\?[\s\S]+)?$/,
-      loader: 'file'
-    },
-    {
-      test: /bootstrap-sass\/assets\/javascripts\//, loader: 'imports?jQuery=jquery'
-    }],
+      },
+      {
+        test:   /\.css$/,
+        loader: "style-loader!css-loader!postcss-loader"
+      },
+      {
+        test: /\.woff2?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: "url?limit=10000"
+      },
+      {
+        test: /\.(ttf|eot|svg)(\?[\s\S]+)?$/,
+        loader: 'file'
+      },
+      {
+        test: /bootstrap-sass\/assets\/javascripts\//, loader: 'imports?jQuery=jquery'
+      }
+    ],
     eslint: {
       configFile: 'src/.eslintrc'
     },
     stats: {
       colors: true
-    }
-}};
+    },
+  },
+  postcss: function() {
+    return [precss, autoprefixer, cssnano];
+  }
+};
