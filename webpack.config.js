@@ -25,7 +25,12 @@ module.exports = {
             include: [new RegExp(path.join(__dirname, 'src'))]
           }
         ],
-    loaders: [{
+    loaders: [
+      {
+        test: /\.(jpg|png)$/,
+        loader: 'file'
+      },
+      {
       test: /\.js$/,
       loaders: ['react-hot', 'babel'],
       include: path.join(__dirname, 'src')
@@ -43,7 +48,7 @@ module.exports = {
     }],
     eslint: {
       configFile: 'src/.eslintrc'
-      },
+    },
     stats: {
       colors: true
     }

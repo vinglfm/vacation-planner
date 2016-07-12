@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Home from './Home';
-import About from './views/about/About'
+import About from './views/about/About';
+import Header from './components/Header/Header'
 
 class App extends React.Component {
   render() {
@@ -16,6 +17,7 @@ class App extends React.Component {
     }
     return (
       <div>
+        <Header/>
         <Child/>
       </div>
     );
