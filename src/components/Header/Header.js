@@ -7,7 +7,7 @@ export default class Header extends React.Component {
       <nav className = "navbar navbar-default">
         <div className="container-fluid">
           <a href="/" className="navbar-brand">
-            <img src={logo}/>
+            <img src={logo} width="25px" height = "25px"/>
           </a>
           <ul className="nav navbar-nav">
             <li><a href="/">Home</a></li>
