@@ -49,6 +49,10 @@ module.exports = {
         loader: "style-loader!css-loader!postcss-loader"
       },
       {
+        test: /\.json$/,
+        loader: "json-loader"
+      },
+      {
         test: /\.woff2?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         loader: "url?limit=10000"
       },
@@ -61,11 +65,16 @@ module.exports = {
       }
     ],
     eslint: {
-      configFile: 'src/.eslintrc'
+      configFile: '.eslintrc'
     },
     stats: {
       colors: true
-    },
+    }
+  },
+  externals: {
+    'react/lib/ReactContext': true,
+    'react/lib/ExecutionEnvironment': true,
+    'react/addons': true
   },
   postcss: function() {
     return [precss, autoprefixer, cssnano];
