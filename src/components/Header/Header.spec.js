@@ -1,5 +1,5 @@
 import React from 'react';
-import {expect} from 'chai';
+import expect from 'expect';
 import {shallow} from 'enzyme';
 
 import Header from './Header';
@@ -7,6 +7,6 @@ import Header from './Header';
 
 describe('<Header/>', function(){
   it('nav should be a top level node', function() {
-
+    expect(true).toEqual(true);
   });
 });
