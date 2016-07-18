@@ -11,20 +11,24 @@ const root = resolve(__dirname);
 const src = join(root, 'src');
 
 module.exports = {
-  devtool: 'eval',
+  debug: true,
+  devtool: 'cheap-module-eval-source-map',
+  noInfo: false,
   entry: [
     'webpack-dev-server/client?http://localhost:3000',
     'webpack/hot/only-dev-server',
     'bootstrap-loader',
     './src/index'
   ],
+  target: 'web',
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
     publicPath: '/static/'
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin()
   ],
   module: {
     preLoaders: [
@@ -40,9 +44,9 @@ module.exports = {
         loader: 'url?limit=25000'
       },
       {
-      test: /\.js$/,
-      loaders: ['react-hot', 'babel'],
-      include: path.join(__dirname, 'src')
+        test: /\.js$/,
+        loaders: ['react-hot', 'babel'],
+        include: path.join(__dirname, 'src')
       },
       {
         test:   /\.css$/,
