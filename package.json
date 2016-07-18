@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "App to plan your next vacation!",
   "scripts": {
-    "start": "node server.js",
+    "start": "babel-node tools/server.js",
     "test:lint": "eslint . --ext .js --ext .jsx --cache"
   },
   "repository": {
@@ -13,6 +13,7 @@
   "author": "Andrew Pryshchepa",
   "devDependencies": {
     "autoprefixer": "^6.3.7",
+    "babel-cli": "^6.10.1",
     "babel-core": "^6.0.20",
     "babel-eslint": "^6.1.2",
     "babel-loader": "^6.0.1",

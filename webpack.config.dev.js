@@ -1,11 +1,9 @@
-var webpack = require('webpack');
-var precss = require('precss');
-var autoprefixer = require('autoprefixer');
-var cssnano = require('cssnano');
+import webpack from 'webpack';
+import precss from 'precss';
+import autoprefixer from 'autoprefixer';
+import cssnano from 'cssnano';
 
-var path = require('path'),
-    join = path.join,
-    resolve = path.resolve;
+import path, {join, resolve} from 'path';
 
 const root = resolve(__dirname);
 const src = join(root, 'src');
