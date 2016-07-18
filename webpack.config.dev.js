@@ -29,13 +29,6 @@ module.exports = {
     new webpack.NoErrorsPlugin()
   ],
   module: {
-    preLoaders: [
-          {
-            test: /\.js$/,
-            loaders: ['eslint-loader'],
-            include: [new RegExp(path.join(__dirname, 'src'))]
-          }
-        ],
     loaders: [
       {
         test: /\.(jpg|png)$/,
@@ -65,18 +58,7 @@ module.exports = {
       {
         test: /bootstrap-sass\/assets\/javascripts\//, loader: 'imports?jQuery=jquery'
       }
-    ],
-    eslint: {
-      configFile: '.eslintrc'
-    },
-    stats: {
-      colors: true
-    }
-  },
-  externals: {
-    'react/lib/ReactContext': true,
-    'react/lib/ExecutionEnvironment': true,
-    'react/addons': true
+    ]
   },
   postcss: function() {
     return [precss, autoprefixer, cssnano];
