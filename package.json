@@ -3,8 +3,10 @@
   "version": "0.0.1",
   "description": "App to plan your next vacation!",
   "scripts": {
-    "start": "babel-node tools/server.js",
-    "test:lint": "eslint . --ext .js --ext .jsx --cache"
+    "start": "npm-run-all --parallel deploy lint:watch",
+    "deploy": "babel-node tools/server.js",
+    "lint": "node_modules/.bin/esw webpack.config.* src tools",
+    "lint:watch": "npm run lint -- --watch"
   },
   "repository": {
     "type": "git",
@@ -26,10 +28,13 @@
     "cssnano": "^3.7.2",
     "eslint": "^3.1.1",
     "eslint-loader": "^1.4.1",
+    "eslint-plugin-import": "^1.11.0",
     "eslint-plugin-react": "^5.2.2",
+    "eslint-watch": "^2.1.13",
     "file-loader": "^0.9.0",
     "json-loader": "^0.5.4",
     "node-sass": "^3.8.0",
+    "npm-run-all": "^2.3.0",
     "phantomjs-polyfill": "0.0.2",
     "phantomjs-prebuilt": "^2.1.7",
     "postcss-loader": "^0.9.1",

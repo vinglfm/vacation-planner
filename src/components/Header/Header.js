@@ -1,9 +1,9 @@
 import React from 'react';
-import styles from './styles.module.css';
+// import styles from './styles.module.css';
 
 export default class Header extends React.Component {
   render() {
-    var logo = require("../../images/logo.png");
+    const logo = require("../../images/logo.png");
     return (
       <nav className = "navbar navbar-default">
         <div className="container-fluid">

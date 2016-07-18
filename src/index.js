@@ -2,11 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Home from './Home';
 import About from './views/about/About';
-import Header from './components/Header/Header'
+import Header from './components/Header/Header';
 
 class App extends React.Component {
   render() {
-    var Child;
+    let Child;
 
     switch(this.props.route) {
       case 'about':
@@ -24,7 +24,7 @@ class App extends React.Component {
   }
 }
 function render() {
-  var route = window.location.hash.substr(1);
+  let route = window.location.hash.substr(1);
   ReactDOM.render(<App route={route}/>, document.getElementById('root'));
 }
 window.addEventListener('hashchange', render);
