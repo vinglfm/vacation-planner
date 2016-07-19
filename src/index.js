@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Home from './Home';
+
+import Home from './views/home/Home';
 import About from './views/about/About';
 import Header from './components/Header/Header';
 
