@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link, IndexLink} from 'react-router';
 // import styles from './styles.module.css';
 
 export default class Header extends React.Component {
@@ -7,12 +8,12 @@ export default class Header extends React.Component {
     return (
       <nav className = "navbar navbar-default">
         <div className="container-fluid">
-          <a href="/" className="navbar-brand">
+          <IndexLink to="/" className="navbar-brand">
             <img src={logo} />
-          </a>
+          </IndexLink>
           <ul className="nav navbar-nav">
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
+            <li><IndexLink to="/" activeClassName="active">Home</IndexLink></li>
+            <li><Link to="/about" activeClassName="active">About</Link></li>
           </ul>
         </div>
       </nav>
