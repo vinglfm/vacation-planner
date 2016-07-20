@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link, IndexLink} from 'react-router';
-// import styles from './styles.module.css';
+import styles from './styles.module.css';
 
 export default class Header extends React.Component {
   render() {
