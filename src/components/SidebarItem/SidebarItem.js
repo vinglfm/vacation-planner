@@ -5,8 +5,8 @@ const SidebarItem = function({country, index}){
 };
 
 SidebarItem.propTypes = {
-  index: PropTypes.object.isRequired,
-  country: PropTypes.array.isRequired
+  index: PropTypes.number.isRequired,
+  country: PropTypes.object.isRequired
 };
 
 export default SidebarItem;

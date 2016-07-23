@@ -6,12 +6,12 @@ const _clone = function(item) {
 
 export default {
   all: function () {
-    console.log(data.countries);
     return _clone(data.countries);
   },
   filter: function (token) {
-      return _clone(data.countries.filter((item) => {
-        return item.localCompare(token);
+      const lowerCaseToken = token.toLowerCase();
+      return _clone(data.countries.filter(({name}) => {
+        return name.toLowerCase().includes(lowerCaseToken);
       }));
   }
 };
