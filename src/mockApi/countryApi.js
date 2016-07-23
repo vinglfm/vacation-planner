@@ -6,6 +6,7 @@ const _clone = function(item) {
 
 export default {
   all: function () {
+    console.log(data.countries);
     return _clone(data.countries);
   },
   filter: function (token) {

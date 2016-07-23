@@ -1,20 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 import countryApi from '../../../mockApi/countryApi';
+import Sidebar from '../../Sidebar/Sidebar';
 
-export default class Home extends Component {
-  _showCountry(country, index) {
-    return <p key={index}>{country.name}</p>;
-  }
-
+export default class Home extends React.Component {
   render() {
     return (
       <div>
-      <div className="jumbotron">
-        <h1>Countries</h1>
-      </div>
-      <div>
-        {countryApi.all().map(this._showCountry)}
-      </div>
+        <div className="jumbotron">
+          <h1>Countries</h1>
+        </div>
+        <Sidebar countries={countryApi.all()} />
       </div>
     );
   }
