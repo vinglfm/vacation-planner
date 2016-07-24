@@ -1,30 +1,46 @@
-import React from 'react';
-import countryApi from '../../../mockApi/countryApi';
+import React, {PropTypes} from 'react';
+import {connect} from 'react-redux';
+import {filterCountries} from '../../../actions/countryActions';
 import Sidebar from '../../Sidebar/Sidebar';
 
-export default class Home extends React.Component {
+class Home extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      countries: []
-    }
 
     this.onFilterChanged = this.onFilterChanged.bind(this);
   }
-  componentWillMount() {
-    this.setState({countries: countryApi.all()});
-  }
+
   onFilterChanged(event) {
-    this.setState({countries: countryApi.filter(event.target.value)});
+    this.props.filterCountries(event.target.value);
   }
+
   render() {
     return (
       <div>
         <div className="jumbotron">
           <h1>Countries</h1>
         </div>
-        <Sidebar countries={this.state.countries} onFilterChanged={this.onFilterChanged}/>
+        <Sidebar countries={this.props.countries} onFilterChanged={this.onFilterChanged}/>
       </div>
     );
   }
 }
+
+Home.propTypes = {
+  countries: PropTypes.array.isRequired,
+  filterCountries: PropTypes.func.isRequired
+};
+
+function mapStateToProps(state, ownProps) {
+  return {
+    countries: state.countryReducer
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    filterCountries: (token) => dispatch(filterCountries(token))
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

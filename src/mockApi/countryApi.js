@@ -6,12 +6,24 @@ const _clone = function(item) {
 
 export default {
   all: function () {
-    return _clone(data.countries);
+     //return new Promise((resolve, reject) => {
+      //setTimeout(() => {
+        // resolve(_clone(data.countries));
+        return _clone(data.countries);
+      //}, 500);
+    //});
   },
   filter: function (token) {
-      const lowerCaseToken = token.toLowerCase();
-      return _clone(data.countries.filter(({name}) => {
-        return name.toLowerCase().includes(lowerCaseToken);
-      }));
+      // return new Promise((resolve, reject) => {
+        // setTimeout(() => {
+          const lowerCaseToken = token.toLowerCase();
+          const filteredCountries = data.countries.filter(
+            ({name}) => {
+            return name.toLowerCase().includes(lowerCaseToken);
+          });
+          return _clone(filteredCountries);
+  //        resolve(_clone(filteredCountries));
+        // }, 500);
+      // });
   }
 };
