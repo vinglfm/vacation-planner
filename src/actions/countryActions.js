@@ -6,23 +6,21 @@ function loadCountriesSuccess(countries) {
 }
 
 export function loadCountries() {
-  // return function(dispatch) {
-  //   return countryApi.all().then(countries => {
-  //     dispatch(loadCountriesSuccess(countries));
-  //   }).catch(error => {
-  //     throw(error);
-  //   });
-  return loadCountriesSuccess(countryApi.all());
-  // };
+  return function(dispatch) {
+    return countryApi.all().then(countries => {
+      dispatch(loadCountriesSuccess(countries));
+    }).catch(error => {
+      throw(error);
+    });
+  };
 }
 
 export function filterCountries(filterToken) {
-  // return function(dispatch, filterToken) {
-  //   return countryApi.filter(filterToken).then(countries =>{
-  //     dispatch(loadCountriesSuccess(countries));
-  //   }).catch(error => {
-  //     throw(error);
-  //   });
-  return loadCountriesSuccess(countryApi.filter(filterToken));
-  // };
+  return function(dispatch) {
+    return countryApi.filter(filterToken).then(countries => {
+      dispatch(loadCountriesSuccess(countries));
+    }).catch(error => {
+      throw(error);
+    });
+  };
 }
