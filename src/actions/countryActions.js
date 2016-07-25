@@ -16,11 +16,5 @@ export function loadCountries() {
 }
 
 export function filterCountries(filterToken) {
-  return function(dispatch) {
-    return countryApi.filter(filterToken).then(countries => {
-      dispatch(loadCountriesSuccess(countries));
-    }).catch(error => {
-      throw(error);
-    });
+    return loadCountriesSuccess(countryApi.filter(filterToken));
   };
-}

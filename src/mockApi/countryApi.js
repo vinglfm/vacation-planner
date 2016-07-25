@@ -13,15 +13,10 @@ export default {
     });
   },
   filter: function (token) {
-      return new Promise((resolve, reject) => {
-        setTimeout(() => {
-          const lowerCaseToken = token.toLowerCase();
-          const filteredCountries = data.countries.filter(
-            ({name}) => {
-            return name.toLowerCase().includes(lowerCaseToken);
-          });
-         resolve(_clone(filteredCountries));
-        }, 500);
-      });
+      const lowerCaseToken = token.toLowerCase();
+      return _clone(data.countries.filter(
+        ({name}) => {
+        return name.toLowerCase().includes(lowerCaseToken);
+      }));
   }
 };
