@@ -60,9 +60,12 @@ describe('<Header/>', function() {
         expect(navbarList.first().children().prop('activeClassName')).toBe('active');
       });
 
-      it('should has link to Home page with active class', function() {
-        console.log(navbarList.first().children().text());
+      it('should has link to Home page with Home description', function() {
         expect(navbarList.first().children().children().text()).toBe('Home');
+      });
+
+      it('should has link to About page as first link', function() {
+        expect(navbarList.at(1).children().prop('to')).toBe('/about');
       });
     });
   });
