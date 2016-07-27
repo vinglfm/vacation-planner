@@ -8,7 +8,8 @@
     "lint": "node_modules/.bin/esw webpack.config.* src tools",
     "lint:watch": "npm run lint -- --watch",
     "test": "mocha --reporter progress tools/testSetup.js \"src/**/*.spec.js\"",
-    "test:watch": "npm run test -- --watch"
+    "test:watch": "npm run test -- --watch",
+    "test:coverage": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha tools/testSetup.js src/**/*.spec.js"
   },
   "repository": {
     "type": "git",
@@ -36,6 +37,7 @@
     "eslint-watch": "^2.1.13",
     "expect": "^1.20.2",
     "file-loader": "^0.9.0",
+    "istanbul": "^0.4.4",
     "json-loader": "^0.5.4",
     "mocha": "^2.5.3",
     "node-sass": "^3.8.0",

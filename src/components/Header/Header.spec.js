@@ -64,8 +64,12 @@ describe('<Header/>', function() {
         expect(navbarList.first().children().children().text()).toBe('Home');
       });
 
-      it('should has link to About page as first link', function() {
+      it('should has link to About page as second link', function() {
         expect(navbarList.at(1).children().prop('to')).toBe('/about');
+      });
+
+      it('should has link to About page with About description', function() {
+        expect(navbarList.at(1).children().children().text()).toBe('About');
       });
     });
   });

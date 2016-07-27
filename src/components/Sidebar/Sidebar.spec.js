@@ -1,0 +1,2 @@
+describe('<Sidebar/>', function() {
+});
