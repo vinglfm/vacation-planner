@@ -1,9 +1,11 @@
 import React, {PropTypes} from 'react';
 import SidebarItem from '../SidebarItem/SidebarItem';
 
+import styles from './styles.module.css';
+
 const Sidebar = function({countries, onFilterChanged}) {
   return (
-    <div>
+    <div className="temp">
       <input type="text" onChange={onFilterChanged}/>
       {countries.map(function(country, index) {
       return <SidebarItem key={index} index={index} country={country}/>;

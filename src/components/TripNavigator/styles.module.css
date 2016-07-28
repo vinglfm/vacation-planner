@@ -1,0 +1,7 @@
+div.navigator {
+  position: absolute;
+  padding: 5px;
+  width: 75%;
+  border: 1px solid blue;
+  margin-left: 25%;
+}

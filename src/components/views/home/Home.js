@@ -1,26 +1,35 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {filterCountries} from '../../../actions/countryActions';
+import {getTrip} from '../../../actions/tripActions';
 import Sidebar from '../../Sidebar/Sidebar';
+import TripNavigator from '../../TripNavigator/TripNavigator';
+
+import styles from './styles.module.css';
 
 class Home extends React.Component {
   constructor(props) {
     super(props);
 
     this.onFilterChanged = this.onFilterChanged.bind(this);
+    this.nextTrip = this.nextTrip.bind(this);
   }
 
   onFilterChanged(event) {
     this.props.filterCountries(event.target.value);
   }
 
+  nextTrip() {
+    this.props.getTrip({});
+  }
+
   render() {
+    console.log("Home" + this.props.trip);
     return (
       <div>
-        <div className="jumbotron">
-          <h1>Countries</h1>
-        </div>
+        <h3>Countries</h3>
         <Sidebar countries={this.props.countries} onFilterChanged={this.onFilterChanged}/>
+        <TripNavigator trip={this.props.trip} nextTrip={this.nextTrip}/>
       </div>
     );
   }
@@ -28,18 +37,22 @@ class Home extends React.Component {
 
 Home.propTypes = {
   countries: PropTypes.array.isRequired,
-  filterCountries: PropTypes.func.isRequired
+  trip: PropTypes.object.isRequired,
+  filterCountries: PropTypes.func.isRequired,
+  getTrip: PropTypes.func.isRequired
 };
 
 function mapStateToProps(state, ownProps) {
   return {
-    countries: state.countryReducer
+    countries: state.countryReducer,
+    trip: state.tripReducer
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    filterCountries: (token) => dispatch(filterCountries(token))
+    filterCountries: (token) => dispatch(filterCountries(token)),
+    getTrip: (country) => dispatch(getTrip(country))
   };
 }
 
