@@ -24,7 +24,6 @@ class Home extends React.Component {
   }
 
   render() {
-    console.log("Home" + this.props.trip);
     return (
       <div>
         <h3>Countries</h3>

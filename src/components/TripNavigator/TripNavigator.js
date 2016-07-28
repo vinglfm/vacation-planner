@@ -4,7 +4,6 @@ import Trip from '../Trip/Trip';
 import styles from './styles.module.css';
 
 const TripNavigator = function({trip, nextTrip}) {
-  console.log("TripNavigator" + trip.country);
     return (<div className="navigator" onClick={nextTrip}>
         <Trip trip={trip}/>
       </div>);
