@@ -5,9 +5,9 @@ function getTripSuccess(trip) {
   return {type: types.TRIP_FOUND, trip};
 }
 
-export function getTrip(country) {
+export function getTrip(criteria) {
   return function(dispatch) {
-    return tripApi.get(country).then((trip) => {
+    return tripApi.get(criteria).then((trip) => {
       dispatch(getTripSuccess(trip));
     }).catch(error => {
       throw(error);

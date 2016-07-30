@@ -13,21 +13,28 @@ class Home extends React.Component {
 
     this.onFilterChanged = this.onFilterChanged.bind(this);
     this.nextTrip = this.nextTrip.bind(this);
+    this.onItemClick = this.onItemClick.bind(this);
   }
 
   onFilterChanged(event) {
     this.props.filterCountries(event.target.value);
   }
 
-  nextTrip() {
+  nextTrip(event) {
+    console.log(event.target);
     this.props.getTrip({});
+  }
+
+  onItemClick(event) {
+    const code = event.target.getAttribute('data-countryCode');
+    this.props.getTrip({country:{code}});
   }
 
   render() {
     return (
       <div>
         <h3>Countries</h3>
-        <Sidebar countries={this.props.countries} onFilterChanged={this.onFilterChanged}/>
+        <Sidebar countries={this.props.countries} onItemClick={this.onItemClick} onFilterChanged={this.onFilterChanged}/>
         <TripNavigator trip={this.props.trip} nextTrip={this.nextTrip}/>
       </div>
     );
