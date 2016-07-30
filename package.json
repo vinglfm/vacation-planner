@@ -1,6 +1,6 @@
 {
   "name": "vacation-planner",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "App to plan your next vacation!",
   "scripts": {
     "start": "npm-run-all --parallel deploy lint:watch test:watch",
