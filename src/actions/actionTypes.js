@@ -1,2 +1,3 @@
 export const COUNTRIES_LOADED = 'COUNTRIES_LOADED';
 export const TRIP_FOUND = 'TRIP_FOUND';
+export const ITEM_SELECTED = 'ITEM_SELECTED';

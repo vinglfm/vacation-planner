@@ -5,8 +5,6 @@ export default {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         let trip = data.find((elem) => {
-          console.log(elem);
-          console.log(criteria);
           return elem.country.code === criteria.country.code;
         });
 
