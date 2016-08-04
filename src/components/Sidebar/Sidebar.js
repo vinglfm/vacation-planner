@@ -5,9 +5,9 @@ import styles from './styles.module.css';
 const Sidebar = function({countries, onFilterChanged, onItemClick, selected}) {
   return (
     <div className="col-md-3 homeContainer_sidebar">
-      <input type="text" className="form-control" placeholder="Search"
+      <input type="text" className="form-control homeContainer_sidebar-search" placeholder="Search"
           onChange={onFilterChanged}/>
-        <div className="list-group">
+        <div className="list-group homeContainer_sidebar-list">
         {countries.map((country, index) => {
         return <SidebarItem key={index} index={index} country={country} selected={selected} onItemClick={onItemClick}/>;
       })}

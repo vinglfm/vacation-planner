@@ -1,3 +1,12 @@
 .homeContainer_sidebar {
-  background-color: gray;
+  height: 100%;
+}
+
+.homeContainer_sidebar-search {
+  height: 5%;
+}
+
+.homeContainer_sidebar-list {
+    max-height:95%;
+    overflow-x:scroll;
 }
