@@ -41,7 +41,7 @@ class Home extends React.Component {
         <h3>Countries</h3>
         <div className="countryContainer">
           <Sidebar countries={this.props.countries} onItemClick={this.onItemClick} onFilterChanged={this.onFilterChanged} selected={this.state.selectedItem}/>
-          <TripNavigator trip={this.props.trip} nextTrip={this.nextTrip}/>
+          <Trip trip={this.props.trip} nextTrip={this.nextTrip}/>
         </div>
       </div>
     );
