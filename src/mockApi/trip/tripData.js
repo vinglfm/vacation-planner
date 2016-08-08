@@ -46,7 +46,8 @@ export default [
 {
   "country" : {
     "code": "AD",
-    "name": "Andorra"
+    "name": "Andorra",
+    "mapImg": "andorra.svg"
   },
   "dates" : {
     "start": "12-06-2015",

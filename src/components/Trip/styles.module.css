@@ -6,3 +6,8 @@
   border: 1px solid blue;
   margin-left: 25%;
 }
+
+.countryContainer_trip_image {
+  height: 100%;
+  width: 100%;
+}
