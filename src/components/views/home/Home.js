@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {filterCountries} from '../../../actions/countryActions';
 import {getTrip} from '../../../actions/tripActions';
 import Sidebar from '../../Sidebar/Sidebar';
-import TripNavigator from '../../TripNavigator/TripNavigator';
+import Trip from '../../Trip/Trip';
 
 import styles from './styles.module.css';
 
