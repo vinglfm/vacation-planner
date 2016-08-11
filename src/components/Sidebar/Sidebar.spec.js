@@ -7,13 +7,17 @@ import Sidebar from './Sidebar';
 describe('<Sidebar/>', function() {
   let wrapper;
   beforeEach(function(){
-    let countries = [
-      {"name": "Andorra"},
-      {"name": "United Arab Emirates"},
-      {"name": "Ukraine"},
-    ];
-    let onFilterChanged = function() { };
-    wrapper = shallow(<Sidebar countries={countries} onFilterChanged={onFilterChanged}/>);
+    let props = {
+      countries: [
+        {"name": "Andorra"},
+        {"name": "United Arab Emirates"},
+        {"name": "Ukraine"},
+      ],
+      selected: 1,
+      onFilterChanged: function() { },
+      onItemClick: function() { }
+    };
+    wrapper = shallow(<Sidebar {...props}/>);
   });
 
   it('Sidebar has input field', function() {

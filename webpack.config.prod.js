@@ -2,19 +2,20 @@ import webpack from 'webpack';
 import precss from 'precss';
 import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
-
 import path, {join, resolve} from 'path';
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
 const root = resolve(__dirname);
 const src = join(root, 'src');
+const GLOBALS = {
+  'process.env.NODE_ENV': JSON.stringify('production')
+};
 
 module.exports = {
   debug: true,
-  devtool: 'cheap-module-eval-source-map',
+  devtool: 'source-map',
   noInfo: false,
   entry: [
-    'webpack-dev-server/client?http://localhost:3000',
-    'webpack/hot/only-dev-server',
     'bootstrap-loader',
     './src/index'
   ],
@@ -25,11 +26,14 @@ module.exports = {
     publicPath: '/'
   },
   devServer: {
-    devServer: './dist'
+    contentBase: './dist'
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.DefinePlugin(GLOBALS),
+    new ExtractTextPlugin('styles.css'),
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.UglifyJsPlugin()
   ],
   module: {
     loaders: [
@@ -39,12 +43,12 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        loaders: ['react-hot', 'babel'],
+        loader: 'babel',
         include: path.join(__dirname, 'src')
       },
       {
         test:   /\.css$/,
-        loader: "style-loader!css-loader!postcss-loader"
+        loader: ExtractTextPlugin.extract("css?sourceMap")
       },
       {
         test: /\.json$/,
