@@ -15,7 +15,6 @@ module.exports = {
   entry: [
     'webpack-dev-server/client?http://localhost:3000',
     'webpack/hot/only-dev-server',
-    'bootstrap-loader',
     './src/index'
   ],
   target: 'web',
@@ -57,9 +56,6 @@ module.exports = {
       {
         test: /\.(ttf|eot|svg)(\?[\s\S]+)?$/,
         loader: 'file'
-      },
-      {
-        test: /bootstrap-sass\/assets\/javascripts\//, loader: 'imports?jQuery=jquery'
       }
     ]
   },

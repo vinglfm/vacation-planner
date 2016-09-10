@@ -16,7 +16,6 @@ module.exports = {
   devtool: 'source-map',
   noInfo: false,
   entry: [
-    'bootstrap-loader',
     './src/index'
   ],
   target: 'web',
@@ -61,9 +60,6 @@ module.exports = {
       {
         test: /\.(ttf|eot|svg)(\?[\s\S]+)?$/,
         loader: 'file'
-      },
-      {
-        test: /bootstrap-sass\/assets\/javascripts\//, loader: 'imports?jQuery=jquery'
       }
     ]
   },
