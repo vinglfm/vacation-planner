@@ -1,0 +1,295 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0b1 | 201101
+   NOTE: WORK IN PROGRESS
+   USE WITH CAUTION AND TEST WITH ABANDON */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+/* remember to define visible focus styles!
+:focus {
+	outline: ?????;
+} */
+
+/* remember to highlight inserts somehow! */
+ins {
+	text-decoration: none;
+}
+del {
+	text-decoration: line-through;
+}
+
+a {
+	text-decoration: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+img, iframe, video, object {
+  max-width: 100%;
+}
+
+.grouping:before,
+.grouping:after {
+  content: " ";
+  display: table;
+}
+
+.grouping::after {
+  clear: both;
+}
+
+nav {
+	background-color: #fff;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	z-index: 1;
+	box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1)
+}
+
+nav img {
+	width: 10em;
+	top: 20px;
+	left: 50px;
+	position: absolute;
+	animation: fastCar 2.5s ease;
+}
+
+@keyframes fastCar {
+	0% {-webkit-transform: translate(0%)}
+	25% {-webkit-transform: translate(90%, 70%)}
+	50% {-webkit-transform: translate(40%, 20%)}
+	75% {-webkit-transform: translate(10%, 50%)}
+	100% {-webkit-transform: translate(0%)}
+}
+
+.nav-links {
+	float: right;
+}
+
+.nav-links > li {
+	float: left;
+}
+
+.nav-links > li > a {
+	padding: 1.5em 0em;
+	width: 10em;
+	border-left: 1px solid #ada791;
+	float:left;
+}
+
+.nav-links > li:first-child > a {
+	border-left: none;
+}
+
+.has-submenu ul {
+	position:absolute;
+	z-index: 5;
+	top: 4em;
+	width: 10em;
+	background-color: #fff;
+	border-left: 1px solid #ada791;
+	border-right: 1px solid #ada791;
+	border-bottom: 1px solid #ada791;
+	border-radius: 0 0 1em 1em;
+	overflow: hidden;
+	display: none;
+}
+
+.has-submenu:hover ul {
+	display: block;
+	animation: slideDown .55s ease;
+}
+
+@keyframes slideDown {
+	0% {transform: translateY(-100%); opacity: 0;}
+	95% {transform: translateY(10%);}
+	100% {transform: translateY(0%); opacity: 1;}
+}
+
+.has-submenu a {
+	display: block;
+	padding: 1.5em;
+	position: relative;
+	z-index: 10;
+}
+
+nav li a {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #766e65;
+	text-transform: uppercase;
+	font-size: 1em;
+	text-align: center;
+	transition: 0.15s background-color linear;
+}
+
+nav li a:focus,
+nav li a:hover,
+nav li a:active {
+	background-color: #eb2428;
+	color: #fff;
+}
+
+.header {
+	background-color: #DCDCDC;
+	margin-top: 50px;
+}
+
+.body {
+  margin: 3%;
+}
+
+footer ul {
+	float: left;
+	margin: 0 5% 50px 0;
+}
+
+footer .footer__list-header {
+	text-transform: uppercase;
+	color: #333;
+	margin-bottom: 30px;
+	font-size: 1em;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+footer a {
+	color: #333;
+}
+
+footer li, footer p {
+	color: #4D4D4D;
+	line-height: 30px;
+}
+
+footer ul {
+	width: 28%;
+}
+
+footer li {
+	margin-bottom: 10px;
+}
+
+footer .icon {
+	font-size: 1.5em;
+	margin-right: 3%;
+	transition: .35 color linear;
+}
+
+footer .icon:hover {
+	color: #754336;
+}
+
+@media screen and (max-width: 1023px) {
+
+	.content-block {
+		float: none;
+		width: auto;
+		margin-top: 20px;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	nav {
+		position: absolute;
+		box-shadow: none;
+	}
+
+	.nav-links {
+		width: 100%;
+		max-height: 0;
+		overflow: hidden;
+		transition: .35s all ease-in-out;
+	}
+
+	.nav-links.active {
+		max-height: 350px;
+	}
+
+	.nav-links > li {
+		float:right;
+		width: 100%;
+	}
+
+	.nav-links li a {
+		text-align: right;
+		padding: 15px 25px 15px 0px;
+		width: 100%;
+		border-bottom: 1px solid #959271;
+		border-left: none;
+		font-size: 13px;
+	}
+
+	nav img {
+		width: 100px;
+		top 0;
+		left: 20px;
+	}
+
+	.has-submenu ul {
+		position: static;
+		display: block;
+		border: none;
+		border-radius: 0;
+		width: 100%;
+	}
+
+	.has-submenu:hover ul {
+		animation: none;
+	}
+
+	.mobile-menu-icon {
+		background: url('images/nav.png') 0 0 no-repeat;
+		width: 30px;
+		height: 30px;
+		float: right;
+		margin: 10px 10px 0 0;
+		cursor: pointer;
+	}
+
+	.mobile-menu-icon.open {
+		background-image: url('images/cross.png')
+	}
+}
