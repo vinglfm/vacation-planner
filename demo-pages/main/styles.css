@@ -224,18 +224,10 @@ nav li a:active {
   margin-right: 8px;
 }
 
-footer a {
-	color: #333;
-}
-
-footer p {
-	color: #4D4D4D;
-	line-height: 30px;
-}
-
 footer .icon {
-	font-size: 1.5em;
-	margin-right: 3%;
+	font-size: 2em;
+	margin-left: 3%;
+	color: #333;
 	transition: .35 color linear;
 }
 
@@ -246,9 +238,8 @@ footer .icon:hover {
 footer {
 	bottom: 0;
 	clear: both;
-	color: white;
 	text-align: center;
-	font-size: 0.8em;
+	font-size: 1em;
 	height: 50px;
 	position: relative;
 	width: 100%;
