@@ -217,10 +217,10 @@ nav li a:active {
 }
 
 .grid-images a {
-  font-size: 16px;
+  font-size: 1em;
   display: inline-block;
   margin-bottom: 8px;
-  width: calc(33 - 4px%);
+  width: calc(33% - 4px);
   margin-right: 8px;
 }
 
