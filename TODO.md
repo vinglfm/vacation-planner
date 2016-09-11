@@ -12,6 +12,13 @@ In development
         1. Learn from other experience -> All vacations page;
         2. Find best destination for your next vacation -> Destinations page;
         3. Plan your perfect vacation -> My vacations page;        
+      Grid:
+        1. Beaches;
+        2. Family travel;
+        3. Adventures;
+        4. Sightseen;
+        5. Wild nature;
+        6. Cuisine;
     Footer:
       1. Logo
       2. About us;
