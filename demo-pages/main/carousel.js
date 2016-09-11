@@ -1,4 +1,4 @@
-var slides = document.querySelectorAll('#slides .slide');
+var slides = document.querySelectorAll('.content .slide');
 var currentSlide = 0;
 var slideInterval = setInterval(goToNextSlide, 10000);
 

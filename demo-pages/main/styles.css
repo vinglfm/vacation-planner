@@ -175,42 +175,60 @@ nav li a:active {
 
 .content {
 	height: 100%;
-	margin: 50px 0;
+	width: 100%;
 	text-align: center;
 }
 
-#slides {
-    position: relative;
-    padding: 0px;
-    margin: 0px;
-		width: 100%;
-    list-style-type: none;
-		z-index: 5;
+.carousel {
+	/*width: 70%;*/
+	/*height: 50px;*/
+  position: relative;
+  padding: 0;
+  margin: 0;
+	z-index: 5;
 }
 
-.slide {
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    opacity: 0;
-    z-index: 1;
+ .slide {
+  position: absolute;
+  left: 0;
+  top: 0;
+	max-width: 100%;
+  opacity: 0;
+  z-index: 1;
 
-    -webkit-transition: opacity 2s;
-    -moz-transition: opacity 2s;
-    -o-transition: opacity 2s;
-    transition: opacity 2s;
+  -webkit-transition: opacity 2s;
+  -moz-transition: opacity 2s;
+  -o-transition: opacity 2s;
+  transition: opacity 2s;
+}
+
+.slide:first-child {
+	position: static;
 }
 
 .showing {
-    opacity: 1;
-    z-index: 2;
+  opacity: 1;
+  z-index: 2;
+}
+
+.grid-images {
+	margin-top: 20px;
+	font-size: 0;
+}
+
+.grid-images a {
+  font-size: 16px;
+  display: inline-block;
+  margin-bottom: 8px;
+  width: calc(33 - 4px%);
+  margin-right: 8px;
 }
 
 footer a {
 	color: #333;
 }
 
-footer li, footer p {
+footer p {
 	color: #4D4D4D;
 	line-height: 30px;
 }
@@ -226,23 +244,14 @@ footer .icon:hover {
 }
 
 footer {
-	background-color: #4D4D4D;
 	bottom: 0;
 	clear: both;
 	color: white;
+	text-align: center;
 	font-size: 0.8em;
 	height: 50px;
-	position: fixed;  /* fixed and not absolute */
+	position: relative;
 	width: 100%;
-}
-
-@media screen and (max-width: 1023px) {
-
-	.content-block {
-		float: none;
-		width: auto;
-		margin-top: 20px;
-	}
 }
 
 @media screen and (max-width: 800px) {
